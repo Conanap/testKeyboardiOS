@@ -46,17 +46,19 @@ class KeyboardViewController: UIInputViewController {
     @IBAction func buttonPressed(button: UIButton) {
         var string = button.titleLabel?.text
         if (string == "<|") {
-            return // delete
+            string = "\u{8}" // delete
         } else if (string == "SHFT") {
             caps = shift;
             shift = !shift;
+            return
         } else {
             if(caps && !shift) {
                 string = string?.uppercased()
                 shift = false
             }
-            (textDocumentProxy as UIKeyInput).insertText("\(string!)")
         }
+        
+        (textDocumentProxy as UIKeyInput).insertText("\(string!)")
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
