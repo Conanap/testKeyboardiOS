@@ -12,7 +12,34 @@
 		E46AA9082229D647005B57D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46AA9062229D647005B57D6 /* Main.storyboard */; };
 		E46AA90A2229D648005B57D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46AA9092229D648005B57D6 /* Assets.xcassets */; };
 		E46AA90D2229D648005B57D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46AA90B2229D648005B57D6 /* LaunchScreen.storyboard */; };
+		E46AA91B2229D65E005B57D6 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AA91A2229D65E005B57D6 /* KeyboardViewController.swift */; };
+		E46AA91F2229D65E005B57D6 /* ckb4.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E46AA9182229D65E005B57D6 /* ckb4.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E46AA9252229D6A1005B57D6 /* kbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46AA9242229D6A1005B57D6 /* kbView.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E46AA91D2229D65E005B57D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E46AA8F72229D647005B57D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E46AA9172229D65E005B57D6;
+			remoteInfo = ckb4;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E46AA9232229D65E005B57D6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E46AA91F2229D65E005B57D6 /* ckb4.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E46AA8FF2229D647005B57D6 /* kb4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kb4.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +49,21 @@
 		E46AA9092229D648005B57D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46AA90C2229D648005B57D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E46AA90E2229D648005B57D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E46AA9182229D65E005B57D6 /* ckb4.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ckb4.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46AA91A2229D65E005B57D6 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		E46AA91C2229D65E005B57D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E46AA9242229D6A1005B57D6 /* kbView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = kbView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E46AA8FC2229D647005B57D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46AA9152229D65E005B57D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				E46AA9012229D647005B57D6 /* kb4 */,
+				E46AA9192229D65E005B57D6 /* ckb4 */,
 				E46AA9002229D647005B57D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E46AA8FF2229D647005B57D6 /* kb4.app */,
+				E46AA9182229D65E005B57D6 /* ckb4.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +104,16 @@
 			path = kb4;
 			sourceTree = "<group>";
 		};
+		E46AA9192229D65E005B57D6 /* ckb4 */ = {
+			isa = PBXGroup;
+			children = (
+				E46AA91A2229D65E005B57D6 /* KeyboardViewController.swift */,
+				E46AA91C2229D65E005B57D6 /* Info.plist */,
+				E46AA9242229D6A1005B57D6 /* kbView.xib */,
+			);
+			path = ckb4;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +124,34 @@
 				E46AA8FB2229D647005B57D6 /* Sources */,
 				E46AA8FC2229D647005B57D6 /* Frameworks */,
 				E46AA8FD2229D647005B57D6 /* Resources */,
+				E46AA9232229D65E005B57D6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E46AA91E2229D65E005B57D6 /* PBXTargetDependency */,
 			);
 			name = kb4;
 			productName = kb4;
 			productReference = E46AA8FF2229D647005B57D6 /* kb4.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E46AA9172229D65E005B57D6 /* ckb4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46AA9202229D65E005B57D6 /* Build configuration list for PBXNativeTarget "ckb4" */;
+			buildPhases = (
+				E46AA9142229D65E005B57D6 /* Sources */,
+				E46AA9152229D65E005B57D6 /* Frameworks */,
+				E46AA9162229D65E005B57D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ckb4;
+			productName = ckb4;
+			productReference = E46AA9182229D65E005B57D6 /* ckb4.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +164,9 @@
 				ORGANIZATIONNAME = "Albion Ka Hei Fung";
 				TargetAttributes = {
 					E46AA8FE2229D647005B57D6 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E46AA9172229D65E005B57D6 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -113,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				E46AA8FE2229D647005B57D6 /* kb4 */,
+				E46AA9172229D65E005B57D6 /* ckb4 */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +201,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E46AA9162229D65E005B57D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46AA9252229D6A1005B57D6 /* kbView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +221,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E46AA9142229D65E005B57D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46AA91B2229D65E005B57D6 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E46AA91E2229D65E005B57D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E46AA9172229D65E005B57D6 /* ckb4 */;
+			targetProxy = E46AA91D2229D65E005B57D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E46AA9062229D647005B57D6 /* Main.storyboard */ = {
@@ -281,6 +378,7 @@
 		E46AA9122229D648005B57D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D32CHYME3D;
@@ -299,6 +397,7 @@
 		E46AA9132229D648005B57D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D32CHYME3D;
@@ -309,6 +408,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.conanap.kb4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E46AA9212229D65E005B57D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D32CHYME3D;
+				INFOPLIST_FILE = ckb4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.conanap.kb4.ckb4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E46AA9222229D65E005B57D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D32CHYME3D;
+				INFOPLIST_FILE = ckb4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.conanap.kb4.ckb4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +468,15 @@
 			buildConfigurations = (
 				E46AA9122229D648005B57D6 /* Debug */,
 				E46AA9132229D648005B57D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46AA9202229D65E005B57D6 /* Build configuration list for PBXNativeTarget "ckb4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46AA9212229D65E005B57D6 /* Debug */,
+				E46AA9222229D65E005B57D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
