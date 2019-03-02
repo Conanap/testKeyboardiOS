@@ -11,6 +11,8 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     var shift: Bool = false
     var caps: Bool = false
+    let portraitHeight: CGFloat = 150.0
+    let landscapeHeight: CGFloat = 103.0
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
@@ -44,21 +46,49 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @IBAction func buttonPressed(button: UIButton) {
-        var string = button.titleLabel?.text
+        let string = button.titleLabel?.text
         if (string == "<|") {
-            string = "\u{8}" // delete
-        } else if (string == "SHFT") {
-            caps = shift;
-            shift = !shift;
+            // delete
+//            let range = (textDocumentProxy as UIKeyInput).selectedTextRange;
             return
-        } else {
-            if(caps && !shift) {
-                string = string?.uppercased()
-                shift = false
+        } else if (string == "SHFT") {
+            if(!caps && shift) {
+                caps = true
+            } else if(caps) {
+                caps = false
+                shift = true
+            }
+            
+            shift = !shift
+
+            changeCase()
+            return
+        }
+
+        (textDocumentProxy as UIKeyInput).insertText("\(string!)")
+        if(shift) {
+            shift = false
+            changeCase()
+        }
+    }
+    
+    func changeCase() {
+        var string: String?;
+        for button in self.view.subviews {
+            if(button is UIButton) {
+                string = (button as! UIButton).titleLabel?.text
+                if(string == "SHFT") {
+                    continue
+                }
+                if(caps != shift) {
+                    string = string?.uppercased()
+                } else {
+                    string = string?.lowercased()
+                }
+
+                (button as! UIButton).setTitle(string, for: UIControl.State.normal)
             }
         }
-        
-        (textDocumentProxy as UIKeyInput).insertText("\(string!)")
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
