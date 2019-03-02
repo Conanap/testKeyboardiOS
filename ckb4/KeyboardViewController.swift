@@ -10,6 +10,7 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
     var shift: Bool = false
+    var caps: Bool = false
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
@@ -43,8 +44,19 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @IBAction func buttonPressed(button: UIButton) {
-        let string = button.titleLabel?.text
-        (textDocumentProxy as UIKeyInput).insertText("\(string!)")
+        var string = button.titleLabel?.text
+        if (string == "<|") {
+            return // delete
+        } else if (string == "SHFT") {
+            caps = shift;
+            shift = !shift;
+        } else {
+            if(caps && !shift) {
+                string = string?.uppercased()
+                shift = false
+            }
+            (textDocumentProxy as UIKeyInput).insertText("\(string!)")
+        }
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
